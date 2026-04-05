@@ -49,16 +49,24 @@ export default function HeroText({ containerRef }: HeroTextProps) {
             const isLast = i === BLOCKS.length - 1
 
             tl.set(el, { opacity: 1 })
-            tl.from(split.chars, {
-                opacity: 0,
-                duration: 0.001,
-                stagger: 0.06,
-                ease: 'none',
+
+            split.chars.forEach((char) => {
+                tl.fromTo(
+                    char,
+                    { opacity: 0, color: '#00FFBF' },
+                    { opacity: 1, color: '#00FFBF', duration: 0.003, ease: 'none' },
+                )
+                tl.to(char, {
+                    color: '#ffffff',
+                    duration: 0.25,
+                    ease: 'power1.inOut',
+                })
             })
+
             tl.to(dummy, { v: i + 0.4, duration: 1, ease: 'none' })
 
             if (!isLast) {
-                tl.set(split.chars, { opacity: 0 })
+                tl.set(split.chars, { opacity: 0, color: '#2ef0c0' })
                 tl.set(el, { opacity: 0 }, '<')
                 tl.to(dummy, { v: i + 1, duration: 0.8, ease: 'none' })
             }
@@ -78,7 +86,7 @@ export default function HeroText({ containerRef }: HeroTextProps) {
                     ref={(el) => {
                         blockRefs.current[i] = el
                     }}
-                    className="absolute text-center text-white leading-tight tracking-tight opacity-0 text-[4rem] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]]">
+                    className="absolute text-center leading-tight tracking-tight opacity-0 text-[4rem] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
                     {text}
                 </div>
             ))}
