@@ -8,22 +8,22 @@ gsap.registerPlugin(ScrollTrigger)
 
 const SLIDES = [
     {
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=85',
+        video: 'https://videos.pexels.com/video-files/31575747/13456598_2560_1440_30fps.mp4',
         title: 'Beyond the Horizon',
         desc: 'With Labwatch, you can monitor all your laboratories in real-time through comprehensive dashboards that display temperature, air quality, ventilation, and other critical parameters. Receive intelligent alerts immediately when conditions deviate from safe thresholds, enabling fast and informed decisions to protect your research and resources.',
     },
     {
-        image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=85',
+        video: 'https://videos.pexels.com/video-files/32386519/13814710_2560_1440_100fps.mp4',
         title: 'Into the Green',
         desc: 'Labwatch helps prevent risks by detecting anomalies early and sending smart alerts based on severity. Avoid accidents, prevent material loss, and ensure that your lab operates under optimal and safe conditions at all times. Proactive monitoring means fewer surprises and more control.',
     },
     {
-        image: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1800&q=85',
+        video: 'https://videos.pexels.com/video-files/8381316/8381316-uhd_2560_1440_25fps.mp4',
         title: 'Open Water',
         desc: 'Centralize management of multiple laboratories from a single platform. Analyze historical data, generate detailed reports, and identify trends to improve operational efficiency. Labwatch predictive analytics help forecast potential issues before they occur, saving time, cost, and effort.',
     },
     {
-        image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1800&q=85',
+        video: 'https://videos.pexels.com/video-files/8381459/8381459-uhd_2560_1440_25fps.mp4',
         title: 'Labwatch Advantage',
         desc: 'Enhance safety and reliability across all your lab facilities. Configure custom ranges, monitor multiple environments simultaneously, and utilize advanced detection features. Labwatch ensures your laboratory environment remains controlled, compliant, and optimized, providing peace of mind for researchers and staff alike.',
     },
@@ -67,7 +67,6 @@ export default function Benefits() {
             },
         })
 
-        // imagen saliente: sale hacia arriba
         tl.to(
             prevImg,
             {
@@ -78,7 +77,6 @@ export default function Benefits() {
             0,
         )
 
-        // imagen entrante: viene desde arriba
         gsap.set(nextImg, { yPercent: -100, opacity: 1 })
         tl.to(
             nextImg,
@@ -90,13 +88,13 @@ export default function Benefits() {
             0,
         )
 
-        // texto saliente: sube hasta el tope del overflow:hidden de cada SplitLine
         if (prevText) {
             const prevLines = prevText.querySelectorAll('.split-child')
             tl.to(
                 prevLines,
                 {
                     yPercent: -105,
+
                     duration: 0.45,
                     ease: 'power2.in',
                     stagger: 0.05,
@@ -105,7 +103,6 @@ export default function Benefits() {
             )
         }
 
-        // texto entrante: sube desde abajo hasta su posición
         if (nextText) {
             const nextLines = nextText.querySelectorAll('.split-child')
             gsap.set(nextLines, { yPercent: 100 })
@@ -117,7 +114,7 @@ export default function Benefits() {
                     ease: 'power4.out',
                     stagger: 0.08,
                 },
-                0.2,
+                0.5,
             )
         }
     }
@@ -170,12 +167,12 @@ export default function Benefits() {
                             imageRefs.current[i] = el
                         }}
                         className="absolute inset-0 will-change-transform">
-                        <Image
-                            src={slide.image}
-                            alt={slide.title}
-                            fill
-                            className="object-cover"
-                            priority={i === 0}
+                        <video
+                            src={slide.video}
+                            autoPlay
+                            muted
+                            loop
+                            className="w-full h-full object-cover"
                         />
                     </div>
                 ))}
@@ -189,9 +186,9 @@ export default function Benefits() {
                             textRefs.current[i] = el
                         }}
                         className="absolute inset-0 flex items-center overflow-hidden text-black text-[1.5rem]  font-medium tracking-tighter font-inter">
-                        <div className="ml-16 flex flex-col gap-1">
+                        <div className="ml-16 flex flex-col -space-y-2 ">
                             <SplitLine>
-                                <span className="text-[#86888d] whitespace-nowrap text-[1rem]">
+                                <span className="text-[#86888d] whitespace-nowrap text-[1.5rem]">
                                     Benefit 0{i + 1}
                                 </span>
                             </SplitLine>

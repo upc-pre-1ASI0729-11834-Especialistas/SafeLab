@@ -7,7 +7,7 @@ import { SplitText } from 'gsap/SplitText'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const BLOCKS = [
-    'Real-time laboratory monitoring.',
+    'Real-time laboratory \n monitoring.',
     'Intelligent alerts and insights.',
     'Predict risks before they happen.',
     'Safer, smarter operations.',
@@ -86,7 +86,7 @@ export default function HeroText({ containerRef }: HeroTextProps) {
                     ref={(el) => {
                         blockRefs.current[i] = el
                     }}
-                    className="absolute text-center leading-tight tracking-tight opacity-0 text-[4rem] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+                    className="absolute text-center leading-tight tracking-tight opacity-0 text-[5.3rem] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
                     {text}
                 </div>
             ))}
