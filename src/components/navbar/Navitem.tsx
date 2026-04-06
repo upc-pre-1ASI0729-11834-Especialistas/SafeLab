@@ -11,16 +11,7 @@ const NavItem = ({ label, options = [] }: NavItemProps) => {
                 className="relative flex items-center gap-1.5 px-1 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 group-hover:text-[#a2fa00]">
                 {label}
                 {/* Underline desde el centro */}
-                <span
-                    className="
-    absolute bottom-[-1px] left-1/2 -translate-x-1/2
-    h-[4px] bg-[#a2fa00] 
-    w-[4px] scale-x-0 origin-center
-    transition-transform duration-200 ease-in
-    group-hover:scale-x-150
-    
-  "
-                />
+                <span className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 h-[4px] bg-[#a2fa00] w-[4px] scale-x-0 origin-center transition-transform duration-200 ease-in group-hover:scale-150" />
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
