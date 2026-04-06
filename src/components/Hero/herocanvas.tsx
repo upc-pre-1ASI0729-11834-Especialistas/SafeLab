@@ -8,7 +8,7 @@ const TOTAL_FRAMES = 120
 const FRAME_PATH = (i: number) => `/frames/frame_${String(i).padStart(4, '0')}.png`
 
 interface HeroCanvasProps {
-    containerRef: React.RefObject<HTMLDivElement>
+    containerRef: React.RefObject<HTMLDivElement | null>
 }
 
 export default function HeroCanvas({ containerRef }: HeroCanvasProps) {

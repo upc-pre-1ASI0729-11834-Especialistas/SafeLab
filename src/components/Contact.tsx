@@ -76,12 +76,13 @@ export default function Contact() {
                             className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
                         />
                     </p>
-                    <p class="text-[#052424] mb-1">How Can We Help?</p>
-                    <select class="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full cursor-pointer">
+                    <p className="text-[#052424] mb-1">How Can We Help?</p>
+                    <select
+                        defaultValue=""
+                        className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full cursor-pointer">
                         <option
                             value=""
-                            disabled
-                            selected>
+                            disabled>
                             Select options
                         </option>
                         <option value="option1">Option 1</option>

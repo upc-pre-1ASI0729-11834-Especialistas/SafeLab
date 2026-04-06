@@ -14,7 +14,7 @@ const BLOCKS = [
 ]
 
 interface HeroTextProps {
-    containerRef: React.RefObject<HTMLDivElement>
+    containerRef: React.RefObject<HTMLDivElement | null>
 }
 
 export default function HeroText({ containerRef }: HeroTextProps) {
