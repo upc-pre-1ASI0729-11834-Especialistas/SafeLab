@@ -26,3 +26,17 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes line-move {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.animate-line-move {
+    position: absolute;
+    animation: line-move 4s linear infinite;
+}

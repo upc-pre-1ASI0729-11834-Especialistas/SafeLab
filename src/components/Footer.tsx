@@ -1,4 +1,5 @@
 import Underlinelink from './ui/Underlinelink'
+import CurvedLineGSAP from './ui/Curvedlinegsap'
 export default function Footer() {
     return (
         <footer className="font-inter flex flex-col h-screen bg-[#052424] text-white py-4">

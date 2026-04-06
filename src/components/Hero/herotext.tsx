@@ -53,8 +53,8 @@ export default function HeroText({ containerRef }: HeroTextProps) {
             split.chars.forEach((char) => {
                 tl.fromTo(
                     char,
-                    { opacity: 0, color: '#00FFBF' },
-                    { opacity: 1, color: '#00FFBF', duration: 0.003, ease: 'none' },
+                    { opacity: 0, color: '#a2fa00' },
+                    { opacity: 1, color: '#a2fa00', duration: 0.003, ease: 'none' },
                 )
                 tl.to(char, {
                     color: '#ffffff',
