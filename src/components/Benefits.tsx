@@ -76,6 +76,7 @@ export default function Benefits() {
                 0,
             )
         }
+
         if (nextText) {
             const nextLines = nextText.querySelectorAll('.split-child')
             gsap.set(nextLines, { yPercent: 100 })
@@ -94,6 +95,7 @@ export default function Benefits() {
             imageRefs.current.forEach((el, i) => {
                 gsap.set(el, { yPercent: i === 0 ? 0 : 100, opacity: 1 })
             })
+
             textRefs.current.forEach((el, i) => {
                 if (!el) return
                 const lines = el.querySelectorAll('.split-child')
@@ -125,11 +127,10 @@ export default function Benefits() {
         <div
             ref={wrapperRef}
             className="relative h-screen w-full flex flex-col">
-            {/* Video area — 65% en móvil, 75% en desktop */}
-            <div
-                className="relative w-full overflow-hidden"
-                style={{ height: '65%' }}>
+            {/* Video area */}
+            <div className="relative w-full overflow-hidden h-[65%] md:h-[75%]">
                 <style>{`@media (min-width: 768px) { .video-area { height: 75% !important; } }`}</style>
+
                 {SLIDES.map((slide, i) => (
                     <div
                         key={i}
@@ -149,7 +150,7 @@ export default function Benefits() {
                 ))}
             </div>
 
-            {/* Text area — 35% en móvil, 25% en desktop */}
+            {/* Text area */}
             <div className="relative bg-white overflow-hidden flex-1">
                 {SLIDES.map((slide, i) => (
                     <div
@@ -158,26 +159,28 @@ export default function Benefits() {
                             textRefs.current[i] = el
                         }}
                         className="absolute inset-0 overflow-hidden text-black font-medium tracking-tighter font-inter">
-                        {/* Layout móvil: columna apilada */}
+                        {/* Mobile */}
                         <div className="flex flex-col justify-center h-full px-6 gap-1 md:hidden">
                             <SplitLine>
-                                <span className="text-[#86888d] text-xl   tracking-tight">
+                                <span className="text-[#86888d] text-xl tracking-tight">
                                     Benefit 0{i + 1}
                                 </span>
                             </SplitLine>
+
                             <SplitLine>
                                 <span className="text-[#052424] text-xl font-semibold leading-tight">
                                     {slide.title}
                                 </span>
                             </SplitLine>
+
                             <SplitLine>
-                                <p className="text-[#86888d] text-md leading-relaxed mt-1 ">
+                                <p className="text-[#86888d] text-md leading-relaxed mt-1">
                                     {slide.desc}
                                 </p>
                             </SplitLine>
                         </div>
 
-                        {/* Layout desktop: original con posicionamiento absoluto */}
+                        {/* Desktop */}
                         <div className="hidden md:flex items-center h-full text-[1.5rem]">
                             <div className="ml-16 flex flex-col -space-y-2">
                                 <SplitLine>
@@ -185,11 +188,15 @@ export default function Benefits() {
                                         Benefit 0{i + 1}
                                     </span>
                                 </SplitLine>
+
                                 <SplitLine>
-                                    <span className="text-[#052424]">{slide.title}</span>
+                                    <span className="text-[#052424] text-[1.5rem]">
+                                        {slide.title}
+                                    </span>
                                 </SplitLine>
                             </div>
-                            <div className="absolute text-[#86888d] max-w-[40rem] text-[0.9rem] translate-x-[30vw]">
+
+                            <div className="absolute text-[#86888d] max-w-[35rem] text-[0.9rem] translate-x-[30vw]">
                                 <SplitLine>
                                     <p>{slide.desc}</p>
                                 </SplitLine>
