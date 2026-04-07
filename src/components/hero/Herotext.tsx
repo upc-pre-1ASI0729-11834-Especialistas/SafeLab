@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
-
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const BLOCKS = [
@@ -22,7 +21,6 @@ export default function HeroText({ containerRef }: HeroTextProps) {
 
     useEffect(() => {
         const container = containerRef.current!
-
         const splits = blockRefs.current.map((el) => {
             if (!el) return null
             return SplitText.create(el, { type: 'chars,words' })
@@ -33,7 +31,6 @@ export default function HeroText({ containerRef }: HeroTextProps) {
         })
 
         const dummy = { v: 0 }
-
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: container,
@@ -49,22 +46,15 @@ export default function HeroText({ containerRef }: HeroTextProps) {
             const isLast = i === BLOCKS.length - 1
 
             tl.set(el, { opacity: 1 })
-
             split.chars.forEach((char) => {
                 tl.fromTo(
                     char,
                     { opacity: 0, color: '#a2fa00' },
                     { opacity: 1, color: '#a2fa00', duration: 0.003, ease: 'none' },
                 )
-                tl.to(char, {
-                    color: '#ffffff',
-                    duration: 0.25,
-                    ease: 'power1.inOut',
-                })
+                tl.to(char, { color: '#ffffff', duration: 0.25, ease: 'power1.inOut' })
             })
-
             tl.to(dummy, { v: i + 0.4, duration: 1, ease: 'none' })
-
             if (!isLast) {
                 tl.set(split.chars, { opacity: 0, color: '#2ef0c0' })
                 tl.set(el, { opacity: 0 }, '<')
@@ -79,15 +69,21 @@ export default function HeroText({ containerRef }: HeroTextProps) {
     }, [containerRef])
 
     return (
-        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none px-4">
             {BLOCKS.map((text, i) => (
                 <div
                     key={i}
                     ref={(el) => {
                         blockRefs.current[i] = el
                     }}
-                    className="absolute text-center leading-tight tracking-tight opacity-0 text-[5.3rem] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-                    {text}
+                    className="absolute text-center leading-tight tracking-tight opacity-0 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] text-[3.8rem] sm:text-[3rem] md:text-[4rem] lg:text-[5.3rem] w-full px-4">
+                    {text.split('\n').map((line, j) => (
+                        <span
+                            key={j}
+                            className="block">
+                            {line}
+                        </span>
+                    ))}
                 </div>
             ))}
         </div>

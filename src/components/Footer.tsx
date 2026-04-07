@@ -1,52 +1,45 @@
 import Underlinelink from './ui/Underlinelink'
-import CurvedLineGSAP from './ui/Curvedlinegsap'
+
 export default function Footer() {
     return (
-        <footer className="font-inter flex flex-col h-screen bg-[#052424] text-white py-4">
-            {/* Sección de columnas centrada verticalmente */}
-            <div className="flex mt-24 justify-center items-end mr-20 flex-col grow">
-                <div className="flex gap-6">
-                    {/* Column 1 */}
+        <footer className="font-inter flex flex-col min-h-screen bg-[#052424] text-white py-4">
+            <div className="flex mt-16 md:mt-24 grow px-6 md:px-0 md:justify-end md:mr-20">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:flex md:flex-row md:gap-6 w-full md:w-auto">
                     <div className="flex flex-col gap-3">
-                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-medium mb-4 uppercase">
+                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-medium mb-2 md:mb-4 uppercase">
                             Technology
                         </span>
-                        <div className="flex flex-col gap-2 font-light text-[1.2rem]">
+                        <div className="flex flex-col gap-2 font-light text-[1rem] md:text-[1.2rem]">
                             <Underlinelink href="#">Homepage</Underlinelink>
                             <Underlinelink href="#">
-                                Lab Security <br />
-                                System{' '}
+                                Lab Security <br /> System
                             </Underlinelink>
                             <Underlinelink href="#">The AI Detection</Underlinelink>
                             <Underlinelink href="#">
-                                Sensor Efficiency <br />
-                                Calculator
+                                Sensor Efficiency <br /> Calculator
                             </Underlinelink>
                         </div>
                     </div>
 
-                    {/* Column 2 */}
                     <div className="flex flex-col gap-3">
-                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-normal mb-4 uppercase">
+                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-normal mb-2 md:mb-4 uppercase">
                             Company
                         </span>
-                        <div className="flex flex-col gap-2 font-light text-[1.2rem]">
+                        <div className="flex flex-col gap-2 font-light text-[1rem] md:text-[1.2rem]">
                             <Underlinelink href="#">About</Underlinelink>
                             <Underlinelink href="#">Resources</Underlinelink>
                             <Underlinelink href="#">Contact</Underlinelink>
                         </div>
                     </div>
 
-                    {/* Column 3 */}
-                    <div className="flex flex-col ml-18 gap-3">
-                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-normal mb-4 uppercase">
+                    <div className="col-span-2 flex flex-col gap-3 md:ml-18">
+                        <span className="font-jetbrains text-[0.6rem] tracking-widest font-normal mb-2 md:mb-4 uppercase">
                             Reach us
                         </span>
-                        <div className="flex flex-col gap-2 font-light text-[1.2rem]">
+                        <div className="flex flex-col gap-2 font-light text-[1rem] md:text-[1.2rem]">
                             <Underlinelink href="#">
                                 Ready for your lab of the future?
                             </Underlinelink>
-
                             <a className="text-[#475e5e]">
                                 Connect with our experts today!
                             </a>
@@ -93,13 +86,11 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Copyright abajo */}
-            <div className="mx-12 flex justify-between items-center text-[0.7rem] text-[#475e5e]">
+            <div className="mx-6 md:mx-12 mt-10 md:mt-0 flex justify-between items-center text-[0.7rem] text-[#475e5e]">
                 <p>
                     Copyright Safelab {new Date().getFullYear()} <br />© All Rights
                     Reserved.
                 </p>
-
                 <p>
                     Made by{' '}
                     <Underlinelink href="https://github.com/FaureGalliard">
