@@ -1,5 +1,7 @@
 'use client'
 import NavItem from './Navitem'
+import SlideButton from '@/components/ui/Slidebutton'
+import UnderlineText from '@/components/ui/Underlinetext'
 
 export default function Navbar() {
     return (
@@ -15,10 +17,13 @@ export default function Navbar() {
                     <NavItem label="Insights" />
                     <NavItem label="Resources" />
                     <NavItem label="About" />
-
-                    <button className="flex bg-[#fff] text-[0.65rem] font-jetbrains tracking-widest text-black rounded-md px-8 py-3 gap-2">
-                        CONTACT
-                    </button>
+                    <span className="relative inline-block">
+                        Contact
+                        <span className="absolute left-0 bottom-0 h-[1px] w-full bg-[#abff02] scale-x-0 origin-right transition-transform duration-300 ease-in-out group-hover:scale-x-100 group-hover:origin-left" />
+                    </span>
+                    <SlideButton className="text-[0.7rem] uppercase font-jetbrains tracking-wider">
+                        <UnderlineText>Contact</UnderlineText>
+                    </SlideButton>
                 </div>
             </div>
         </nav>

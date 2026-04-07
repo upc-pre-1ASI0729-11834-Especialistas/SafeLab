@@ -1,6 +1,7 @@
 export default function Contact() {
     return (
         <div className=" flex flex-col font-inter  items-center bg-white text-black gap-30">
+            <div className="w-full bg-white h-[10vh]"></div>
             <h1 className="  text-[4.8rem] text-[#052424]">Contact Us</h1>
             <div className="flex gap-30">
                 <div className="text-[1.1rem] flex flex-col gap-6 ">
@@ -89,6 +90,7 @@ export default function Contact() {
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
                     </select>
+                    <div className="w-full bg-white h-[10vh]"></div>
                 </div>
             </div>
         </div>
