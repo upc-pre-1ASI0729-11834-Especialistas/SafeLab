@@ -1,11 +1,16 @@
 export default function BuildBy() {
     return (
-        <div className="bg-white w-full  font-inter justify-center  h-screen flex flex-col items-center">
-            <h1 className="text-black/25 text-[1.2rem] ">Built by the industry </h1>
-            <span className="h-[3vh]"></span>
-            <h1 className=" tracking-tighter  text-[#052424] max-w-[50vw] text-[4.2rem] text-center leading-none">
+        <section className="w-full bg-white flex flex-col items-center justify-center text-center px-4 md:px-8 lg:px-16 py-16 md:py-24">
+            {/* SUBTITLE */}
+            <p className="text-black/40 text-sm md:text-base">Built by the industry</p>
+
+            {/* TITLE */}
+            <h1
+                className="mt-4 text-[#052424] tracking-tight leading-tightest 
+                           text-4xl sm:text-3xl md:text-5xl lg:text-6xl 
+                           max-w-3xl">
                 Built by logistics leaders who want a new industry standard in the yard
             </h1>
-        </div>
+        </section>
     )
 }

@@ -1,96 +1,119 @@
 export default function Contact() {
     return (
-        <div className=" flex flex-col font-inter  items-center bg-white text-black gap-30">
-            <div className="w-full bg-white h-[10vh]"></div>
-            <h1 className="  text-[4.8rem] text-[#052424]">Contact Us</h1>
-            <div className="flex gap-30">
-                <div className="text-[1.1rem] flex flex-col gap-6 ">
-                    <h1 className="text-[#052424] text-[1.4rem] font-semibold   items-center gap-2">
-                        Reach out to learn more about Safelab, on your <br /> terms:
-                    </h1>
-                    <div className="flex gap-3">
-                        <span className="border-l border border-[#abff02] h-full"></span>
-                        <div className="flex"></div>
-                        <div className="text-[#cdd3d3] font-medium gap-2 text-[1.4rem] flex flex-col">
-                            <a>01</a>
-                            <a>02</a>
-                            <a>03</a>
-                            <a>04</a>
-                            <a>05</a>
+        <div className="flex flex-col items-center bg-white text-black font-inter px-4 md:px-8 lg:px-16 py-12">
+            {/* TITLE */}
+            <h1 className="text-[#052424] text-xl md:text-5xl lg:text-6xl text-center leading-tight">
+                Contact Us
+            </h1>
+
+            {/* CONTENT */}
+            <div className="w-full max-w-6xl mt-12 flex flex-col lg:flex-row gap-12">
+                {/* LEFT */}
+                <div className="flex-1 flex flex-col gap-6">
+                    <h2 className="text-[#052424] text-lg md:text-2xl font-semibold">
+                        Reach out to learn more about Safelab, on your terms:
+                    </h2>
+
+                    <div className="flex gap-4">
+                        {/* LINE */}
+                        <div className="w-[2px] bg-[#abff02]" />
+
+                        {/* NUMBERS */}
+                        <div className="text-[#cdd3d3] font-medium flex flex-col gap-2 text-base md:text-lg">
+                            <span>01</span>
+                            <span>02</span>
+                            <span>03</span>
+                            <span>04</span>
+                            <span>05</span>
                         </div>
-                        <div className="flex flex-col font-normal  gap-2  text-[1.4rem]">
-                            <h1>Schedule a 30-minute meeting with a yard expert</h1>
-                            <h1>Schedule a YOS Demo</h1>
-                            <h1>Arrange ROI consultation</h1>
-                            <h1>Set up a 2-Day Proof of Value on site</h1>
-                            <h1>Something else</h1>
+
+                        {/* TEXT */}
+                        <div className="flex flex-col gap-2 text-base md:text-lg">
+                            <p>Schedule a 30-minute meeting with a yard expert</p>
+                            <p>Schedule a YOS Demo</p>
+                            <p>Arrange ROI consultation</p>
+                            <p>Set up a 2-Day Proof of Value on site</p>
+                            <p>Something else</p>
                         </div>
                     </div>
                 </div>
-                <div className="text-[1.1rem] flex flex-col gap-6 ">
-                    <h1 className="text-[#052424] text-[2rem] flex items-center">
-                        Tell us a bit about you:
-                        <div className="flex gap-2 ml-30">
-                            <span className="block w-4 h-4 rounded-full bg-[#abff02]"></span>
-                            <span className="block w-4 h-4 rounded-full bg-[#cdd3d3]"></span>
+
+                {/* RIGHT FORM */}
+                <div className="flex-1 flex flex-col gap-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <h2 className="text-[#052424] text-xl md:text-2xl">
+                            Tell us a bit about you:
+                        </h2>
+
+                        <div className="flex gap-2">
+                            <span className="block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#abff02]"></span>
+                            <span className="block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#cdd3d3]"></span>
                         </div>
-                    </h1>
-                    <p className="text-[#052424]">
-                        Full Name*
-                        <input
-                            type="text"
-                            placeholder="John Doe"
-                            className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
-                        />
-                    </p>
+                    </div>
 
-                    <p className="text-[#052424]">
-                        Role or position *
-                        <input
-                            type="text"
-                            placeholder="Project manager"
-                            className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
-                        />
-                    </p>
+                    {/* INPUTS */}
+                    <div className="flex flex-col gap-5 text-sm md:text-base">
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            Full Name*
+                            <input
+                                type="text"
+                                placeholder="John Doe"
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1"
+                            />
+                        </label>
 
-                    <p className="text-[#052424]">
-                        Phone Number
-                        <input
-                            type="tel"
-                            placeholder="+1 234 567 890"
-                            className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
-                        />
-                    </p>
-                    <p className="text-[#052424]">
-                        Email
-                        <input
-                            type="email"
-                            placeholder="name@email.com"
-                            className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
-                        />
-                    </p>
-                    <p className="text-[#052424]">
-                        Company Name
-                        <input
-                            type="text"
-                            placeholder="Acme"
-                            className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full"
-                        />
-                    </p>
-                    <p className="text-[#052424] mb-1">How Can We Help?</p>
-                    <select
-                        defaultValue=""
-                        className="bg-transparent text-black placeholder-gray-400 py-1 border-b border-[#cdd3d3] outline-none w-full cursor-pointer">
-                        <option
-                            value=""
-                            disabled>
-                            Select options
-                        </option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
-                    <div className="w-full bg-white h-[10vh]"></div>
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            Role or position *
+                            <input
+                                type="text"
+                                placeholder="Project manager"
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1"
+                            />
+                        </label>
+
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            Phone Number
+                            <input
+                                type="tel"
+                                placeholder="+1 234 567 890"
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1"
+                            />
+                        </label>
+
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            Email
+                            <input
+                                type="email"
+                                placeholder="name@email.com"
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1"
+                            />
+                        </label>
+
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            Company Name
+                            <input
+                                type="text"
+                                placeholder="Acme"
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1"
+                            />
+                        </label>
+
+                        <label className="flex flex-col gap-1 text-[#052424]">
+                            How Can We Help?
+                            <select
+                                defaultValue=""
+                                className="bg-transparent border-b border-[#cdd3d3] outline-none py-1 cursor-pointer">
+                                <option
+                                    value=""
+                                    disabled>
+                                    Select options
+                                </option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
